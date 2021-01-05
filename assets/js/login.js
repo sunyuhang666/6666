@@ -73,7 +73,8 @@ $(function () {
     // 3.
     $.ajax({
       type: "POST",
-      url: "http://ajax.frontend.itheima.net/api/reguser",
+      // url: "http://ajax.frontend.itheima.net/api/reguser",
+      url: "/api/reguser",
       data,
       success: function (res) {
         // console.log(res);
@@ -102,7 +103,8 @@ $(function () {
 
     $.ajax({
       type: "POST",
-      url: "http://ajax.frontend.itheima.net/api/login",
+      // url: "http://ajax.frontend.itheima.net/api/login",
+      url: "/api/login",
       data,
       success: function (res) {
         console.log(res);
@@ -117,10 +119,12 @@ $(function () {
         // 跳转页面
         location.href = "/home/index.html"; */
 
+        // 登录成功，还需要把服务器给的token信息给存储起来
+        localStorage.setItem("token", res.token);
+
         // 延时跳转：等弹出框关闭了才去跳转
         layer.msg("登录成功, 即将跳转到首页", function () {
           // 弹出框关闭了才会执行该函数
-
           // 跳转页面
           location.href = "/home/index.html";
         });

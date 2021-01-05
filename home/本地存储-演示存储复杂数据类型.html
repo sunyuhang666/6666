@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <script>
+        // 获取元素
+        let setBtn = document.querySelector(".set");
+        let getBtn = document.querySelector(".get");
+
+        // 把data数据给存储起来
+        let data = [
+            {id: 1, name: "xm", age: 19},
+            {id: 2, name: "xhei", age: 29},
+            {id: 3, name: "xhong", age: 12},
+        ];
+
+        // localStorage 存储数据
+        setBtn.onclick = function () {
+            // 直接将data数组存储起来，会导致原本的数据内容会丢失掉，所以如下直接存储
+            // localStorage.setItem("data", data);
+
+            // 先让data转成json字符串,在来存储json字符串
+            let jsonStr = JSON.stringify(data);
+            localStorage.setItem("data", jsonStr);
+        }
+
+        // 获取数据
+        getBtn.onclick = function () {
+            let res = localStorage.getItem("data"); // 获取的数据也是json字符串
+
+            // 需要先进行parse解析得到js对象和数组
+            console.log(JSON.parse(res));
+        }
+    </script>
+</body>
+
+</html>
