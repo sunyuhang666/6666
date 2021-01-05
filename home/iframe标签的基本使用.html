@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 以下代码,会新打开标签页来展示对应的网址 -->
+  <!-- <a href="http://www.baidu.com" target="_blank">百度一下</a>
+  <a href="http://www.taobao.com" target="_blank">淘宝</a> -->
+
+
+  <!-- 点击a链接，a链接的href指定的网页需要在iframe中打开 -->
+  <a href="http://www.baidu.com" target="demo">百度一下</a>
+  <a href="http://www.taobao.com" target="demo">淘宝</a>
+
+  <br>
+
+  <!-- 
+    需要注意：name表示iframe的名字，后面a链接的target属性的值需要写成该name的值
+    src的值表示iframe默认打开的页面
+   -->
+  <iframe width="800" height="600" name="demo" src="" frameborder="0"></iframe>
+</body>
+
+</html>
