@@ -48,7 +48,7 @@
       <div class="layui-side-scroll">
 
         <!-- 展示头像和昵称 -->
-        <div class="userInfo" href="javascript:;">
+        <div class="userInfo">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
           <!-- text-avatar 文字头像 -->
           <span class="text-avatar">A</span>
@@ -71,9 +71,12 @@
           <li class="layui-nav-item">
             <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
             <dl class="layui-nav-child">
-              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
-              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
-              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+              <dd><a href="/user/user_info.html" target="layUiBody"><i class="layui-icon layui-icon-app"></i>基本资料</a>
+              </dd>
+              <dd><a href="/user/user_avatar.html" target="layUiBody"><i class="layui-icon layui-icon-app"></i>更换头像</a>
+              </dd>
+              <dd><a href="/user/user_pwd.html" target="layUiBody"><i class="layui-icon layui-icon-app"></i>重置密码</a>
+              </dd>
             </dl>
           </li>
         </ul>
@@ -83,7 +86,8 @@
     <div class="layui-body">
       <!-- 内容主体区域 -->
       <!-- <div style="padding: 15px;">内容主体区域</div> -->
-      <iframe name="layUiBody" src="/home/dashboard.html"></iframe>
+      <!-- <iframe name="layUiBody" src="/home/dashboard.html"></iframe> -->
+      <iframe name="layUiBody" src="/user/user_avatar.html" frameborder="0"></iframe>
     </div>
 
     <div class="layui-footer">
